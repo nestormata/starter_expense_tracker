@@ -31,6 +31,7 @@ python -m expense_tracker <command> [options]
 | `add AMOUNT CATEGORY DATE [--note NOTE]` | Record an expense. `DATE` is `YYYY-MM-DD`. |
 | `list [--category CATEGORY]` | List expenses, optionally filtered by category. |
 | `delete ID` | Delete an expense by its id. |
+| `export [--output PATH]` | Export expenses as CSV to stdout or a file. |
 
 ### Examples
 
@@ -39,6 +40,8 @@ python -m expense_tracker add 12.50 groceries 2026-01-15 --note "weekly shop"
 python -m expense_tracker list
 python -m expense_tracker list --category groceries
 python -m expense_tracker delete 1
+python -m expense_tracker export
+python -m expense_tracker export --output expenses.csv
 ```
 
 By default, data is stored in `expenses.json` in the current directory. Set
@@ -64,6 +67,7 @@ expense_tracker/
     add.py
     list_cmd.py
     delete.py
+    export.py
 tests/                 # pytest suite
 ```
 

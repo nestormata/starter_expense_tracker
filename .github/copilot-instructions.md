@@ -96,6 +96,7 @@ intent. None of this changes how you generate code, but the team likes it here.
 ## Testing
 
 - We use pytest. Tests live in `tests/`, mirroring the package layout.
+- Follow the TDD red/green/refactor cycle.
 - Every new behaviour needs a test that fails without the change.
 - Use `tmp_path` for anything that touches the filesystem. Never write test
   artifacts into the repo.
@@ -105,6 +106,7 @@ intent. None of this changes how you generate code, but the team likes it here.
 - End-to-end tests use Playwright and live in `e2e/`. Keep them stable; a flaky
   test is worse than no test.
 - Mark slow tests with `@pytest.mark.slow` so they can be skipped locally.
+- Make sure to also manually test critical paths that may not be covered by automated tests. And create test scenarios and a way to run them automatically (BDD).
 
 ## SQL and migrations
 
@@ -177,6 +179,7 @@ intent. None of this changes how you generate code, but the team likes it here.
 - Architecture decisions of any weight get an ADR in `docs/adr/`.
 - Keep this file up to date. (In practice, nobody does, so be skeptical of
   anything here that the code contradicts.)
+- When new features or changes are made make sure to update the README accordingly.
 
 ## Appendix A: onboarding notes for new joiners
 

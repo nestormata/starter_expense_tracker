@@ -19,7 +19,7 @@ class Expense:
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, data: dict) -> "Expense":
+    def from_dict(cls, data: dict) -> Expense:
         return cls(
             id=int(data["id"]),
             amount_cents=int(data["amount_cents"]),
