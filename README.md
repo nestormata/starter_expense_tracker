@@ -30,6 +30,7 @@ python -m expense_tracker <command> [options]
 | :------ | :----------- |
 | `add AMOUNT CATEGORY DATE [--note NOTE]` | Record an expense. `DATE` is `YYYY-MM-DD`. |
 | `list [--category CATEGORY]` | List expenses, optionally filtered by category. |
+| `top [--limit N]` | Show the largest expenses (default: 3). |
 | `delete ID` | Delete an expense by its id. |
 | `export [--output PATH]` | Export expenses as CSV to stdout or a file. |
 
@@ -39,6 +40,7 @@ python -m expense_tracker <command> [options]
 python -m expense_tracker add 12.50 groceries 2026-01-15 --note "weekly shop"
 python -m expense_tracker list
 python -m expense_tracker list --category groceries
+python -m expense_tracker top --limit 2
 python -m expense_tracker delete 1
 python -m expense_tracker export
 python -m expense_tracker export --output expenses.csv
@@ -66,6 +68,7 @@ expense_tracker/
   commands/            # one module per command
     add.py
     list_cmd.py
+    top.py
     delete.py
     export.py
 tests/                 # pytest suite

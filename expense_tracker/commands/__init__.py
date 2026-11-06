@@ -9,6 +9,6 @@ To add a new command, create a module here and list it in ``COMMANDS``.
 Follow the shape of the existing commands (add, list, delete).
 """
 
-from . import add, delete, export, list_cmd
+from . import add, delete, export, list_cmd, top
 
-COMMANDS = [add, list_cmd, delete, export]
+COMMANDS = [add, list_cmd, top, delete, export]
